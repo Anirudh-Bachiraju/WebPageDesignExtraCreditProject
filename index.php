@@ -13,7 +13,7 @@ fwrite($myfile, $txt);
 <hr />
 <?php
 $x = 2
-print $myfile[$x];
+print $myfile[2];
 fclose($myfile);
 ?>
 </body>
