@@ -14,7 +14,7 @@ fclose($myfile);
 <hr />
 <?php
 $x = 2
-print $lines[$x];
+print $myfile[$x];
 ?>
 </body>
 </html>
