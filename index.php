@@ -2,14 +2,14 @@
 <html>
 <body>
 <?php
-$myfile = fopen("data.txt", "a+") or die("Unable to open file!");
+$myfile = fopen("data.txt", "w+") or die("Unable to open file!");
 // Output one line until end-of-file
 while(!feof($myfile)) {
   echo fgets($myfile) . "<br>";
 }
-$txt = "John Doe\n";
+$txt = "Data\n";
 fwrite($myfile, $txt);
-$txt = "Jane Doe\n";
+$txt = "Data1\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 ?>
