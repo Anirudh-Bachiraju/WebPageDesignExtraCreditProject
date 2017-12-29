@@ -7,9 +7,7 @@ $myfile = fopen("data.txt", "a+") or die("Unable to open file!");
 while(!feof($myfile)) {
   echo fgets($myfile) . "<br>";
 }
-$txt = "Data\n";
-fwrite($myfile, $txt);
-$txt = "Data1\n";
+$txt = "New Post\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 ?>
