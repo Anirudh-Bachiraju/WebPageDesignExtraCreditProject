@@ -11,5 +11,10 @@ $txt = "New Post\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 ?>
+<hr />
+<?php
+$x = 2
+print $lines[$x];
+?>
 </body>
 </html>
