@@ -13,7 +13,7 @@ fwrite($myfile, $txt);
 <hr />
 <?php
 $line_counter = 0;
-$desired_line = 29;
+$desired_line = 2;
 
 while ((! feof($myfile)) && ($line_counter < $desired_line)) {
     if ($s = fgets($myfile,1048576)) {
