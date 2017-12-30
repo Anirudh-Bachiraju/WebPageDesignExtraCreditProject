@@ -12,9 +12,17 @@ fwrite($myfile, $txt);
 ?>
 <hr />
 <?php
-$x = 2
-print $myfile[2];
-fclose($myfile);
+$line_counter = 0;
+$desired_line = 29;
+
+while ((! feof($myfile)) && ($line_counter < $desired_line)) {
+    if ($s = fgets($myfile,1048576)) {
+        $line_counter++;
+    }
+}
+fclose($myfile) or die($php_errormsg);
+
+print $s;
 ?>
 </body>
 </html>
