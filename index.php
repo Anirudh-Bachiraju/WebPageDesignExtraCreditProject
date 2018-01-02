@@ -23,7 +23,9 @@
 	<hr />
 <?php
 $myfile = fopen("data.txt", "a+") or die("Unable to open file!");
-
+// Output one line until end-of-file
+$txt = $_POST["post"];
+fwrite($myfile, $txt);
 while(!feof($myfile)) {
   echo fgets($myfile) . "<br />";
 }
