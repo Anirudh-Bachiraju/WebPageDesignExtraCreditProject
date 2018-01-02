@@ -142,6 +142,17 @@ if(isset($_POST['submit'])) {
 $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
+<hr />
+<?php
+	$my_anchor = new html_element('div');
+	$my_anchor->set('id',"hi");
+	$my_anchor1 = new html_element('p');
+	$my_anchor1->set('text',"Hi");
+	$my_anchor2 = new html_element('p');
+	$my_anchor2->set('text',"Hi");
+	$my_anchor->inject($my_anchor1);
+	$my_anchor->inject($my_anchor2);
+?>
 </body>
 
 </html>
