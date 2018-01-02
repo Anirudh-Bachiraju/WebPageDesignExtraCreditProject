@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
 	$f = fopen("data.txt", "a");
 
 	// Write text
-	fwrite($f, $_POST["post"]); 
+	fwrite($f, $post); 
 
 	// Close the text file
 	fclose($f);
