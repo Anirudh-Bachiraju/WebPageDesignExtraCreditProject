@@ -140,9 +140,26 @@ $my_anchor = new html_element('p');
 $my_anchor->set('text',$post);
 $my_anchor->set('id','1');
 $my_anchor->output();
-$header = show_source('index.php');
+$header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
+<script>
+function WriteFile()
+{
+
+var fh = fopen("data.txt", 3); // Open the file for writing
+
+if(fh!=-1) // If the file has been successfully opened
+{
+    var str = "Some text goes here...";
+    fwrite(fh, str); // Write the string to a file
+    fclose(fh); // Close the file 
+}
+
+}
+
+WriteFile();
+</script>
 </body>
 
 </html>
