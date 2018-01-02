@@ -125,11 +125,11 @@ fwrite($myfile, $txt1);
 while(!feof($myfile)) {
   echo fgets($myfile) . "<br />";
 }
-$my_anchor = new html_element('p');
-$my_anchor->set('text',$txt1);
-$my_anchor->set('id','1');
-$my_anchor->output();
-?>
+//$my_anchor = new html_element('p');
+//$my_anchor->set('text',$txt1);
+//$my_anchor->set('id','1');
+//$my_anchor->output();
+//?>
 </body>
 
 </html>
