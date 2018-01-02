@@ -143,14 +143,6 @@ $my_anchor->output();
 $header = show_source('index.php');
 file_put_contents('saved.php',$header);
 ?>
-<script>
-  var a="Hello";
-  window.location.href = window.location.href+'?a='+a;
-</script>
-<?php
-$variable = $_GET['a'];
-echo $variable;
-?>
 </body>
 
 </html>
