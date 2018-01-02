@@ -22,23 +22,7 @@
 	</center>
 	<br />
 	<hr />
-<?php
-if(isset($_POST['submit'])) {	
-	$post = $_POST["post"];
-	// Open the text file
-	$f = fopen("data.txt", "a");
-	// Write text
-	fwrite($f, $post . "\n"); 
-	// Close the text file
-	fclose($f);
-	// Open file for reading, and read the line
-	$lines = file('data.txt');
-	// Loop through our array, show HTML source as HTML source; and line numbers too.
-	foreach ($lines as $line_num => $line) {
-	    echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
-	}
-}
-?>
+
 <?php
 /* creates an html element, like in js */
 class html_element
@@ -131,6 +115,26 @@ class html_element
 	function output()
 	{
 		echo $this->build();
+	}
+}
+?>
+<?php
+if(isset($_POST['submit'])) {	
+	$post = $_POST["post"];
+	// Open the text file
+	$f = fopen("data.txt", "a");
+	// Write text
+	fwrite($f, $post . "\n"); 
+	// Close the text file
+	fclose($f);
+	// Open file for reading, and read the line
+	$lines = file('data.txt');
+	// Loop through our array, show HTML source as HTML source; and line numbers too.
+	foreach ($lines as $line_num => $line) {
+	    	$my_anchor = new html_element('p');
+		$my_anchor->set('text',$line);
+		$my_anchor->set('id',$line_num);
+		$my_anchor->output();
 	}
 }
 ?>
