@@ -129,7 +129,7 @@ while(!feof($myfile)) {
 //$my_anchor->set('text',$txt1);
 //$my_anchor->set('id','1');
 //$my_anchor->output();
-//?>
+?>
 </body>
 
 </html>
