@@ -24,7 +24,7 @@
 <?php
 	if (isset($_POST['submit'])) {
 		$post = $_POST['post'];
-		$file = fopen("http://webpagedesignblock3.gearhostpreview.com/data.txt", a+) or die ("file failed to open");
+		$file = fopen("data.txt", a+) or die ("file failed to open");
 		$post1 = $post . "\n";
 		fputs($file,$post1) or die ("Data not written");
 	}
