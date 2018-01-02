@@ -140,7 +140,6 @@ $my_anchor = new html_element('p');
 $my_anchor->set('text',$post);
 $my_anchor->set('id','1');
 $my_anchor->output();
-fclose($file);
 ?>
 </body>
 
