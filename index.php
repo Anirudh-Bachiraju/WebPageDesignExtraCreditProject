@@ -143,6 +143,8 @@ $my_anchor = new html_element('p');
 $my_anchor->set('text',$post);
 $my_anchor->set('id','1');
 $my_anchor->output();
+$header = file_get_contents('saved.php');
+file_put_contents('index.php',$header);
 ?>
 </body>
 
