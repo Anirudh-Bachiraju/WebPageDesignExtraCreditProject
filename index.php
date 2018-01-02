@@ -20,7 +20,25 @@
 		<br />
 	</center>
 	<br />
-
+	<hr />
+<?php
+if(isset($_POST['submit'])) {	
+	$post = $_POST["post"];
+	// Open the text file
+	$f = fopen("data.txt", "a");
+	// Write text
+	fwrite($f, $post . "\n"); 
+	// Close the text file
+	fclose($f);
+	// Open file for reading, and read the line
+	$f = fopen("data.txt", "r");
+	// Read text
+	while(!feof($f)) {
+		echo fgets($f) . "<br>";
+	} 
+	fclose($f);
+}
+?>
 <?php
 /* creates an html element, like in js */
 class html_element
@@ -117,35 +135,10 @@ class html_element
 }
 ?>
 <?php
-$id = 0
-if(isset($_POST['submit'])) {	
-	$post = $_POST["post"];
-	// Open the text file
-	$f = fopen("data.txt", "a");
-
-	// Write text
-	fwrite($f, $post . "\n"); 
-
-	// Close the text file
-	fclose($f);
-
-	// Open file for reading, and read the line
-	$f = fopen("data.txt", "r");
-
-	// Read text
-	while(!feof($f)) {
-		$id = $id + 1;
-		$x = fgets($f);
-		$my_anchor = new html_element('p');
-		$my_anchor->set('text',$x);
-		$my_anchor->set('id', $id);
-		$my_anchor->output();
-	} 
-	fclose($f);
-}
-?>
-<hr />
-<?php
+$my_anchor = new html_element('p');
+$my_anchor->set('text',$post);
+$my_anchor->set('id','1');
+$my_anchor->output();
 $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
