@@ -22,12 +22,14 @@
 	<br />
 	<hr />
 <?php
-$myfile = fopen("data.txt", "r") or die("Unable to open file!");
+$myfile = fopen("data.txt", "a+") or die("Unable to open file!");
 // Output one line until end-of-file
+$txt = $_POST["post"];
+$txt1 = $txt . "/n";
+fwrite($myfile, $txt1);
 while(!feof($myfile)) {
-  echo fgets($myfile) . "<br>";
+  echo fgets($myfile) . "<br />";
 }
-fclose($myfile);
 ?>
 </body>
 
