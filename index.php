@@ -24,7 +24,7 @@
 <?php
 	$post = $_POST["post"];
 	// Open the text file
-	$f = fopen("data.txt", "w");
+	$f = fopen("data.txt", "a");
 
 	// Write text
 	fwrite($f, $_POST["post"]); 
