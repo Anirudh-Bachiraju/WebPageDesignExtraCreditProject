@@ -1,1 +1,45 @@
+#body {
+	background-color: lightgray;
+}
+#postingdiv {
+	margin: auto;
+}
+#input {
+	width: 30%
+}
+.button {
+  display: inline-block;
+  width: 156px;
+  height: 90px;
+  padding: 15px 25px;
+  font-size: 35px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+p {
+	background-color: white;
+	border-color: dimgray;
+	text-align: center;
+	border-width: 3px;
+	border-style: solid;
+	margin-top: 20px;
+	font-size: 20px;
+	padding: 25px;
+	border-radius: 25px;
+}
 
