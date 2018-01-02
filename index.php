@@ -22,6 +22,7 @@
 	<br />
 	<hr />
 <?php
+if(isset($_POST['submit'])) {	
 	$post = $_POST["post"];
 	// Open the text file
 	$f = fopen("data.txt", "a");
@@ -38,7 +39,7 @@
 	// Read text
 	echo fgets($f); 
 	fclose($f);
-
+}
 ?>
 <?php
 /* creates an html element, like in js */
