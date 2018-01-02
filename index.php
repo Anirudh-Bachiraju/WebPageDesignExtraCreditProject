@@ -117,12 +117,18 @@ class html_element
 }
 ?>
 <?php
-$my_anchor = new html_element('a');
-$my_anchor->set('href','https://davidwalsh.name');
-$my_anchor->set('title','David Walsh Blog');
-$my_anchor->set('text','Click here!');
+$myfile = fopen("data.txt", "a+") or die("Unable to open file!");
+// Output one line until end-of-file
+$txt = $_POST["post"];
+$txt1 = $txt . "/n";
+fwrite($myfile, $txt1);
+while(!feof($myfile)) {
+  echo fgets($myfile) . "<br />";
+}
+$my_anchor = new html_element('p');
+$my_anchor->set('text',$txt1);
+$my_anchor->set('id','1');
 $my_anchor->output();
-
 ?>
 </body>
 
