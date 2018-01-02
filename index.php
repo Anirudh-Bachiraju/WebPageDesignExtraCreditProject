@@ -13,6 +13,7 @@
 			<textarea rows="10" cols="100" name="post" form="form"></textarea>
 			<form action="index.php" method="post" id="form">
 				<input class="button" name="submit" type="submit">
+				
 			</form>
 		</div>
 		<br />
@@ -139,7 +140,7 @@ $my_anchor = new html_element('p');
 $my_anchor->set('text',$post);
 $my_anchor->set('id','1');
 $my_anchor->output();
-$header = file_get_contents('index.php');
+$header = show_source('index.php');
 file_put_contents('saved.php',$header);
 ?>
 <script>
