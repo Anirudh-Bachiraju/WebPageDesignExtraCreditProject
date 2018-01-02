@@ -22,12 +22,23 @@
 	<br />
 	<hr />
 <?php
-	if (isset($_POST['submit'])) {
-		$post = $_POST['post'];
-		$file = fopen("data.txt", a+) or die ("file failed to open");
-		$post1 = $post . "\n";
-		fputs($file,$post1) or die ("Data not written");
-	}
+
+	// Open the text file
+	$f = fopen("textfile.txt", "w");
+
+	// Write text
+	fwrite($f, $_POST["textblock"]); 
+
+	// Close the text file
+	fclose($f);
+
+	// Open file for reading, and read the line
+	$f = fopen("textfile.txt", "r");
+
+	// Read text
+	echo fgets($f); 
+	fclose($f);
+
 ?>
 <?php
 /* creates an html element, like in js */
