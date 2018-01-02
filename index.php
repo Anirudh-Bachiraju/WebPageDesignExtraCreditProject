@@ -12,7 +12,7 @@
 		<div id="postingdiv">
 			<textarea rows="10" cols="100" name="post" form="form"></textarea>
 			<form action="index.php" method="post" id="form">
-				<input class="button" type="submit">
+				<input class="button" name="submit" type="submit">
 			</form>
 		</div>
 		<br />
@@ -22,19 +22,12 @@
 	<br />
 	<hr />
 <?php
-if(isset($_POST['post'])) {
-    $data = $_POST['post'] . "\n";
-    $ret = file_put_contents('data.txt', $data, FILE_APPEND | LOCK_EX);
-    if($ret === false) {
-        die('There was an error writing this file');
-    }
-    else {
-        echo "$ret bytes written to file";
-    }
-}
-else {
-   die('no post data to process');
-}
+	if (isset($_POST['submit'])) {
+		$post = $_POST['post'];
+		$file = fopen("http://webpagedesignblock3.gearhostpreview.com/data.txt", a+) or die ("file failed to open");
+		$post1 = $post . "\n";
+		fputs($file,$post1) or die ("Data not written");
+	}
 ?>
 <?php
 /* creates an html element, like in js */
@@ -133,9 +126,10 @@ class html_element
 ?>
 <?php
 $my_anchor = new html_element('p');
-$my_anchor->set('text',$data);
+$my_anchor->set('text',$post);
 $my_anchor->set('id','1');
 $my_anchor->output();
+fclose($file);
 ?>
 </body>
 
