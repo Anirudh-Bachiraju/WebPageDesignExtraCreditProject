@@ -139,10 +139,6 @@ if(isset($_POST['submit'])) {
 }
 ?>
 <?php
-$my_anchor = new html_element('p');
-$my_anchor->set('text',$post);
-$my_anchor->set('id','1');
-$my_anchor->output();
 $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
