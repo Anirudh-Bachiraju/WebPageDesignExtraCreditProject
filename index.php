@@ -32,12 +32,11 @@ if(isset($_POST['submit'])) {
 	// Close the text file
 	fclose($f);
 	// Open file for reading, and read the line
-	$f = fopen("data.txt", "r");
-	// Read text
-	while(!feof($f)) {
-		echo fgets($f) . "<br>";
-	} 
-	fclose($f);
+	$lines = file('data.txt');
+	// Loop through our array, show HTML source as HTML source; and line numbers too.
+	foreach ($lines as $line_num => $line) {
+	    echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
+	}
 }
 ?>
 <?php
@@ -143,23 +142,6 @@ $my_anchor->output();
 $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
-<script>
-function WriteFile()
-{
-
-var fh = fopen("data.txt", 3); // Open the file for writing
-
-if(fh!=-1) // If the file has been successfully opened
-{
-    var str = "Some text goes here...";
-    fwrite(fh, str); // Write the string to a file
-    fclose(fh); // Close the file 
-}
-
-}
-
-WriteFile();
-</script>
 </body>
 
 </html>
