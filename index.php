@@ -37,7 +37,9 @@ if(isset($_POST['submit'])) {
 	$f = fopen("data.txt", "r");
 
 	// Read text
-	echo fgets($f); 
+	while(!feof($f)) {
+		echo fgets($f) . "<br>";
+	} 
 	fclose($f);
 }
 ?>
