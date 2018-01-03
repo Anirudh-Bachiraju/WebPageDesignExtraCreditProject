@@ -165,8 +165,9 @@ file_put_contents('saved.php',$header);
 <script type="text/javascript">
 function add(x) {
     var y = x-1;
+    y = String(y);
     var z = document.getElementById(y).innerHTML;
-    z = z+1;
+    document.getElementById(y).innerHTML = z+1;
 }
 </script>
 </body>
