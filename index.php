@@ -167,6 +167,7 @@ function add(x) {
     var y = x-1;
     y = String(y);
     var z = document.getElementById(y).innerHTML;
+    z = Number(z);
     document.getElementById(y).innerHTML = z+1;
 }
 </script>
