@@ -141,7 +141,7 @@ if(isset($_POST['submit'])) {
 		$img->output();
 		$pvote = new html_element('h1');
 		$pvote->set('text',$votes);
-		$pvote->set('id',$votesid);
+		$pvote->set('class',$votesid);
 		$pvote->output();
 		$img1 = new html_element('img');
 		$img1->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Japanese_Map_symbol_%28Field%29.svg/2000px-Japanese_Map_symbol_%28Field%29.svg.png');
@@ -165,9 +165,9 @@ file_put_contents('saved.php',$header);
 function add(x) {
     var y = x-1;
     y = String(y);
-    var z = document.getElementById(y).innerHTML;
+    var z = document.getElementsByClassName(y).innerHTML;
     z = Number(z);
-    document.getElementById(y).innerHTML = z+1;
+    document.document.getElementsByClassName(y).innerHTML = z+1;
 }
 </script>
 </body>
