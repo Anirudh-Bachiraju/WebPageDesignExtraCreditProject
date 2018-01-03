@@ -128,15 +128,27 @@ if(isset($_POST['submit'])) {
 	// Open file for reading, and read the line
 	$lines = file('data.txt');
 	// Loop through our array, show HTML source as HTML source; and line numbers too.
+	$votes = 0;
 	foreach ($lines as $line_num => $line) {
-	    	$my_img = new html_element('img');
-		$my_img->set('src','https://steemitimages.com/DQmV7ugnawtaEArmsbj89zUD1eD8hbpXYAmTkVVa1o2Gxux/IMG_7917.PNG');
-		$my_img->set('class','upvote');
-		$my_img->output();
-		$my_anchor = new html_element('p');
-		$my_anchor->set('text',$line);
-		$my_anchor->set('id',$line_num);
-		$my_anchor->output();
+		$img = new html_element('img');
+		$img->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/OOjs_UI_icon_caretUp.svg/2000px-OOjs_UI_icon_caretUp.svg.png');
+		$img->set('class','upvote');
+		$img->set('width','100');
+		$img->set('height','100');
+		$img->output();
+		$pvote = new html_element('p');
+		$pvote->set('text',$votes);
+		$pvote->output();
+		$img1 = new html_element('img');
+		$img1->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Japanese_Map_symbol_%28Field%29.svg/2000px-Japanese_Map_symbol_%28Field%29.svg.png');
+		$img1->set('class','downvote');
+		$img1->set('width','100');
+		$img1->set('height','100');
+		$img1->output();
+		$p = new html_element('p');
+		$p->set('text',$line);
+		$p->set('id',$line_num);
+		$p->output();
 	}
 }
 ?>
