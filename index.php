@@ -13,7 +13,6 @@
 			<textarea rows="10" cols="100" name="post" form="form"></textarea>
 			<form action="index.php" method="post" id="form">
 				<input class="button" name="submit" type="submit">
-				
 			</form>
 		</div>
 		<br />
