@@ -5,7 +5,7 @@
 	<title>Extra Credit Assignment</title>
 </head>
 
-<body id="body">
+<body id="body" align="center">
 	<center>
 		<h1>Anirudh Bachiraju | Posting Website</h1>
 		<br />
