@@ -129,6 +129,7 @@ if(isset($_POST['submit'])) {
 	$lines = file('data.txt');
 	// Loop through our array, show HTML source as HTML source; and line numbers too.
 	$votes = 0;
+	
 	foreach ($lines as $line_num => $line) {
 		$votesid = $line_num + 1;
 		$img = new html_element('img');
@@ -136,29 +137,31 @@ if(isset($_POST['submit'])) {
 		$img->set('class','upvote');
 		$img->set('width','50');
 		$img->set('height','50');
-		$img->set('onclick','add($line_num)');
-		$img->output();
 		$pvote = new html_element('h1');
 		$pvote->set('text',$votes);
 		$pvote->set('id',$votesid);
-		$pvote->output();
+		$pvoteid = $pvote->get('id');
+		$npvoteid = $pvoteid + 1;
+		$spvoteid = $pvoteid - 1;
+		$img->set('onclick','$pvote->set('id',$npvoteid);');
+		
+		
 		$img1 = new html_element('img');
 		$img1->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Japanese_Map_symbol_%28Field%29.svg/2000px-Japanese_Map_symbol_%28Field%29.svg.png');
 		$img1->set('class','downvote');
 		$img1->set('width','50');
 		$img1->set('height','50');
-		$img->set('onclick','subtract($line_num)');
-		$img1->output();
+		$img1->set('onclick','$pvote->set('id',$spvoteid);');
+		
 		$p = new html_element('p');
 		$p->set('text',$line);
 		$p->set('id',$line_num);
+		$img->output();
+		$pvote->output();
+		$img1->output();
 		$p->output();
 	}
 }
-?>
-<?php
-$header = file_get_contents('index.php');
-file_put_contents('saved.php',$header);
 ?>
 </body>
 
