@@ -130,7 +130,9 @@ if(isset($_POST['submit'])) {
 	// Loop through our array, show HTML source as HTML source; and line numbers too.
 	foreach ($lines as $line_num => $line) {
 	    	$my_img = new html_element('img');
-		$my_img->set('id',$line_num);
+		$my_img->set('src','https://steemitimages.com/DQmV7ugnawtaEArmsbj89zUD1eD8hbpXYAmTkVVa1o2Gxux/IMG_7917.PNG');
+		$my_img->set('class','upvote');
+		$my_img->output();
 		$my_anchor = new html_element('p');
 		$my_anchor->set('text',$line);
 		$my_anchor->set('id',$line_num);
