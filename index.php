@@ -20,8 +20,6 @@
 		<hr />
 		<br />
 	</center>
-	<br />
-	<hr />
 
 <?php
 /* creates an html element, like in js */
@@ -131,7 +129,10 @@ if(isset($_POST['submit'])) {
 	$lines = file('data.txt');
 	// Loop through our array, show HTML source as HTML source; and line numbers too.
 	foreach ($lines as $line_num => $line) {
-	    	$my_anchor = new html_element('p');
+	    	$my_img = new html_element('img');
+		$my_img->set('src','https://steemitimages.com/DQmV7ugnawtaEArmsbj89zUD1eD8hbpXYAmTkVVa1o2Gxux/IMG_7917.PNG');
+		$my_img->set('onclick','upvote($line_num)');
+		$my_anchor = new html_element('p');
 		$my_anchor->set('text',$line);
 		$my_anchor->set('id',$line_num);
 		$my_anchor->output();
