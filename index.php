@@ -163,9 +163,10 @@ $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
 <script type="text/javascript">
-function add(x)
-{
-    alert(x);
+function add(x) {
+    var y = x-1;
+    var z = document.getElementById(y).innerHTML;
+    z = z+1;
 }
 </script>
 </body>
