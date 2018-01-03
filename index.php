@@ -136,7 +136,7 @@ if(isset($_POST['submit'])) {
 		$img->set('width','100');
 		$img->set('height','100');
 		$img->output();
-		$pvote = new html_element('p');
+		$pvote = new html_element('h3');
 		$pvote->set('text',$votes);
 		$pvote->output();
 		$img1 = new html_element('img');
