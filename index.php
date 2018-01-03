@@ -131,12 +131,14 @@ if(isset($_POST['submit'])) {
 	$votes = 0;
 	foreach ($lines as $line_num => $line) {
 		$votesid = $line_num + 1;
+		$imgid = $votesid + 1;
 		$img = new html_element('img');
 		$img->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/OOjs_UI_icon_caretUp.svg/2000px-OOjs_UI_icon_caretUp.svg.png');
 		$img->set('class','upvote');
 		$img->set('width','50');
 		$img->set('height','50');
-		$img->set('onclick','add($line_num)');
+		$img->set('id',$imgid);
+		$img->set('onclick','add(this.id)');
 		$img->output();
 		$pvote = new html_element('h1');
 		$pvote->set('text',$votes);
@@ -147,7 +149,7 @@ if(isset($_POST['submit'])) {
 		$img1->set('class','downvote');
 		$img1->set('width','50');
 		$img1->set('height','50');
-		$img->set('onclick','subtract($line_num)');
+		$img1->set('id',$imgid);
 		$img1->output();
 		$p = new html_element('p');
 		$p->set('text',$line);
@@ -160,6 +162,12 @@ if(isset($_POST['submit'])) {
 $header = file_get_contents('index.php');
 file_put_contents('saved.php',$header);
 ?>
+<script type="text/javascript">
+function add(x)
+{
+    alert(x);
+}
+</script>
 </body>
 
 </html>
