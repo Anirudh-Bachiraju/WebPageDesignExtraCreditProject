@@ -130,20 +130,24 @@ if(isset($_POST['submit'])) {
 	// Loop through our array, show HTML source as HTML source; and line numbers too.
 	$votes = 0;
 	foreach ($lines as $line_num => $line) {
+		$votesid = $line_num + 1;
 		$img = new html_element('img');
 		$img->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/OOjs_UI_icon_caretUp.svg/2000px-OOjs_UI_icon_caretUp.svg.png');
 		$img->set('class','upvote');
 		$img->set('width','50');
 		$img->set('height','50');
+		$img->set('onclick','add($line_num)');
 		$img->output();
 		$pvote = new html_element('h1');
 		$pvote->set('text',$votes);
+		$pvote->set('id',$votesid);
 		$pvote->output();
 		$img1 = new html_element('img');
 		$img1->set('src','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Japanese_Map_symbol_%28Field%29.svg/2000px-Japanese_Map_symbol_%28Field%29.svg.png');
 		$img1->set('class','downvote');
 		$img1->set('width','50');
 		$img1->set('height','50');
+		$img->set('onclick','subtract($line_num)');
 		$img1->output();
 		$p = new html_element('p');
 		$p->set('text',$line);
